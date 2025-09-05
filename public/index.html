@@ -1,1 +1,46 @@
-<index.html code here>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Space Auth — Login / Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="space-bg">
+  <div class="container card">
+    <h1 class="title neon">🚀 Space Auth</h1>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="login">Login</button>
+      <button class="tab" data-tab="signup">Sign Up</button>
+    </div>
+
+    <div id="login" class="panel active">
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@galaxy.com" required />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="••••••••" required />
+        <button class="btn glow" type="submit">Login</button>
+        <p class="error" id="loginError"></p>
+      </form>
+    </div>
+
+    <div id="signup" class="panel">
+      <form id="signupForm" class="form">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Nova Pilot" required />
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@galaxy.com" required />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Create a strong password" required />
+        <button class="btn glow" type="submit">Create Account</button>
+        <p class="error" id="signupError"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
