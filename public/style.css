@@ -1,1 +1,146 @@
-<style.css code here>
+/* Google Fonts loaded in HTML: Orbitron + Montserrat */
+:root {
+  --bg1: #060b1b;
+  --bg2: #0b1b3d;
+  --accent: #6cf1ff;
+  --accent-2: #b26cff;
+  --text: #e8f2ff;
+  --muted: #9bb0c2;
+  --glow: 0 0 12px rgba(108, 241, 255, 0.7), 0 0 30px rgba(178, 108, 255, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+body.space-bg {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #1a2340 0%, #0a1030 35%, #05081b 70%, #030615 100%),
+              linear-gradient(120deg, rgba(108,241,255,0.08), rgba(178,108,255,0.08));
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* twinkling stars */
+body.space-bg::before, body.space-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.7) 0, transparent 50%),
+    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,.6) 0, transparent 50%),
+    radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,.5) 0, transparent 50%);
+  animation: twinkle 6s linear infinite alternate;
+}
+body.space-bg::after { animation-duration: 8s; opacity: .6; }
+@keyframes twinkle { from {opacity:.4} to {opacity:1} }
+
+.container {
+  max-width: 800px;
+  margin: 6vh auto;
+  padding: 24px;
+}
+
+.card {
+  background: rgba(10, 16, 45, 0.6);
+  border: 1px solid rgba(108, 241, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), var(--glow);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  margin: 0 0 12px 0;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+}
+
+.neon { text-shadow: var(--glow); color: var(--accent); }
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0 22px;
+}
+.tab {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(108,241,255,.3);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.tab.active {
+  background: linear-gradient(90deg, rgba(108,241,255,.18), rgba(178,108,255,.18));
+  box-shadow: var(--glow);
+}
+
+.form { display: grid; gap: 10px; }
+.form label { color: var(--muted); font-size: 0.95rem; }
+.form input, .form textarea {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  outline: none;
+}
+.form input:focus, .form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108,241,255,.2);
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(108,241,255,.35);
+  background: rgba(108,241,255,.15);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn.glow { box-shadow: var(--glow); }
+.btn.outline { background: transparent; }
+.btn:hover { transform: translateY(-1px); }
+
+.error { color: #ff8fa3; min-height: 20px; }
+.hint { color: var(--muted); font-size: 0.9rem; }
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  margin-top: 14px;
+}
+.avatar-wrap {
+  display: grid;
+  place-items: center;
+}
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid rgba(108,241,255,.5);
+  box-shadow: var(--glow);
+  background: rgba(255,255,255,.05);
+}
+
+.status {
+  margin: 6px 0 10px;
+  color: var(--accent);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.95rem;
+}
