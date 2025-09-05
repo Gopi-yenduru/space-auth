@@ -1,1 +1,38 @@
-<profile.html code here>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Space Profile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="space-bg">
+  <div class="container card">
+    <div class="profile-header">
+      <h1 class="title neon">👩‍🚀 Your Profile</h1>
+      <button id="logoutBtn" class="btn outline">Logout</button>
+    </div>
+
+    <div id="status" class="status">Loading profile…</div>
+
+    <div class="profile">
+      <div class="avatar-wrap">
+        <img id="avatarImg" class="avatar" src="" alt="Avatar"/>
+      </div>
+
+      <div class="form">
+        <label>Name</label>
+        <input id="nameInput" type="text" placeholder="Your cosmic name" />
+        <label>Bio</label>
+        <textarea id="bioInput" rows="4" placeholder="Write a short bio…"></textarea>
+        <label>Avatar URL</label>
+        <input id="avatarInput" type="url" placeholder="https://example.com/avatar.png" />
+        <p class="hint">Edits save automatically ✨</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
